@@ -2,9 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
+    id("com.google.dagger.hilt.android")
+   /* kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id ("kotlin-parcelize")
-
+*/
 
 }
 
@@ -86,16 +88,27 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 
+/*
     //Dagger-Hilt dependencies
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    //implementation("androidx.hilt:hilt-navigation-compose:1.0.0")*/
+
+
 
 
 }
-// Allow references to generated code
 
+
+// Allow references to generated code
 kapt {
     correctErrorTypes = true
 }
+/*// Allow references to generated code
+
+kapt {
+    correctErrorTypes = true
+}*/
