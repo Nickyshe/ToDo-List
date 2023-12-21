@@ -1,6 +1,11 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
+    id ("kotlin-parcelize")
+
+
 }
 
 android {
@@ -66,21 +71,31 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //Compose lifecycles
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+
 
 //navigation
-    dependencies {
-        val nav_version = "2.7.6"
-
-        implementation("androidx.navigation:navigation-compose:$nav_version")
+    val nav_version = "2.7.6"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 
 //room
-        dependencies {
-            val room_version = "2.6.1"
 
-            implementation("androidx.room:room-runtime:$room_version")
-            annotationProcessor("androidx.room:room-compiler:$room_version")
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
 
 
-        }
-    }
+    //Dagger-Hilt dependencies
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.46.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+
+}
+// Allow references to generated code
+
+kapt {
+    correctErrorTypes = true
 }
