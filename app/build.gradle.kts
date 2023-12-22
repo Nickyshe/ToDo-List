@@ -3,10 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-   /* kotlin("kapt")
-    id("dagger.hilt.android.plugin")
-    id ("kotlin-parcelize")
-*/
+
 
 }
 
@@ -37,12 +34,10 @@ android {
         }
     }
     compileOptions {
-/*        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17*/
-     sourceCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-   kotlinOptions {
+    kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures {
@@ -91,12 +86,9 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
-  //Dagger-Hilt dependencies
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
-
-
-
+    //Dagger-Hilt dependencies
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
 
 }
