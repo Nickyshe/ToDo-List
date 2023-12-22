@@ -8,5 +8,5 @@ interface TodoRepository {
     suspend fun updateTodo(todo: Todo)
     suspend fun deleteTodo(todo: Todo)
     suspend fun getAllTodoById(id: Int):Todo?
-    suspend fun getAllTodos():Flow<List<Todo>>
+    fun getAllTodos():Flow<List<Todo>>
 }

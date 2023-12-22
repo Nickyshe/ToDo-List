@@ -23,7 +23,7 @@ class TodoRepositoryImpl(private val dao: TodoDao):TodoRepository {
         return TODO("Provide the return value")
     }
 
-    override suspend fun getAllTodos(): Flow<List<Todo>> {
+    override  fun getAllTodos(): Flow<List<Todo>> {
       dao.getALLTodos()
         return TODO("Provide the return value")
     }

@@ -29,7 +29,7 @@ fun TodoScreen() {
         text = "TODO APP",
         style = TextStyle(
             fontSize = 24.sp,
-                fontFamily = FontFamily(Font(R.font.jost_bold)),
+             //   fontFamily = FontFamily(Font(R.font.jost_bold)),
              fontWeight = FontWeight(600),
             color = Color(0xFFFFFFFF),
         )
